@@ -18,6 +18,9 @@ class UsersController < ApplicationController
     if @user
       session[:user_id] = @user.id
       session[:user_email]= @user.email
+      session[:user_name] = @user.name
+      session[:user_first_name] = @user.name.split(" ")[0]
+      session[:user_last_name] = @user.name.split(" ")[1]
       flash[:success] = "User has signed up"
       redirect_to root_path
     else

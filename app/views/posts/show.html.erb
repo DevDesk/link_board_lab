@@ -1,1 +1,15 @@
-This is a show posts page
+<h1>This is a show posts page</h1>
+<br>
+Title:  <%= @post.title %>
+<br>
+Link:  <a target="_blank" href=<%= @post.link %>><%= @post.link %></a>
+<br>
+Created: <%= @post.created_at.time.to_formatted_s(:long) %>
+<br>
+<% if @post.created_at != @post.updated_at %>
+Updated: <%= @post.updated_at.time.to_formatted_s(:long) %>
+<% end %>
+<br>
+<br>
+<td> <%= link_to 'Delete', @post, :method => :delete, :data => {:confirm => "Are you sure?"}, :class => "btn btn-danger " %></td>
+<%= link_to 'Edit', edit_post_path, :class => "btn btn" %>

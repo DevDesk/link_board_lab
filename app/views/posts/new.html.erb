@@ -1,1 +1,11 @@
-This is a new posts page
+<h1>New Posts Pg</h1>
+
+<% flash.each do |k,v| %>
+  <h3><strong><%= k %></strong> - <%= v %></h3>
+<% end %>
+
+<%= form_for @post do |f| %>
+  <%= f.text_field :title, placeholder: "Enter a title" %>
+  <%= f.text_field :link, placeholder: "Enter a URL" %>
+  <%= f.submit "Submit" %>
+<% end %>

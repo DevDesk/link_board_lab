@@ -4,9 +4,18 @@
 
 <h1>This is the new home page</h1><br>
 
-
+<h2>Hi <%= session[:user_first_name] %>!!</h2><br>
+<h2>...or should I call you Mr <%= session[:user_last_name] %>?</h2>
+<h2>Your email is: <%= session[:user_email] %></h2>
 <h2>Your User Id is <strong><%= session[:user_id] %></strong></h2>
 
 <%= link_to 'Log In', login_path, :class => "btn btn-primary" %>
 
 <%= link_to 'Log Out', logout_path, :class => "btn btn-danger " %>
+
+<%= link_to 'Sign Up', signup_path, :class => "btn btn" %>
+
+<% if session[:user_id]%>
+  <%= link_to 'Create Posts', new_post_path, :class => "btn btn" %>
+  <%= link_to 'My Posts', posts_path, :class => "btn btn" %>
+<% end %>

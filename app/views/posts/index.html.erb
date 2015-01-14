@@ -1,1 +1,21 @@
-This is the posts index
+<h1>This is my Submitted Posts index</h1>
+<br>
+<table class="table">
+  <tbody>
+    <tr>
+      <th> Id </th>
+      <th> Creature </th>
+      <th> Description </th>
+      <th> </th>
+    </tr>
+    <% @posts.each do |post| %>
+    <tr>
+      <td> <%= post.id%> </td>
+      <td> <%= post.title %> </td>
+      <td> <%= post.link %> </td>
+      <td> <a href='/posts/<%=post.id%>/edit'>Link</a></td>
+      <td> <%= link_to 'Delete', post, :method => :delete, :data => {:confirm => "Are you sure?"}, :class => "btn btn-danger " %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
