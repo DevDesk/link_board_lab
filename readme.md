@@ -60,9 +60,12 @@ Create full CRUD routes.
 * create new rails app `rails new ./ -T`
 * test `rails s` go to localhost:3000 in browser
 * Create `User` model (with `has_secure_password`)
+rails g model user email password_digest
+
 * enable bcrypt gem in Gemfile
 * migrate `rake db:migrate`
 * test `rails c` User.create... etc...
+
 * Create authentication routes / views / actions
 * Create `Post` model
 * migrate `rake db:migrate`

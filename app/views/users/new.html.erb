@@ -1,0 +1,10 @@
+This is the sign-up page
+
+<!-- @user need routes.rb to show as: :users  -->
+<%= form_for(@user) do |f| %>
+    <%= f.text_field :name, :placeholder => "Enter your name"%>
+    <%= f.text_field :email, :placeholder => "Enter your email"%>
+    <%= f.password_field :password, :placeholder => "Enter a password"%>
+    <%= f.password_field :password_confirmation, :placeholder => "Verify password"%>
+    <%= f.submit %>
+<% end %>

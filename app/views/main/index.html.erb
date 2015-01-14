@@ -1,0 +1,12 @@
+<% flash.each do |k,v| %>
+  <h3><strong><%= k %></strong> - <%= v %></h3>
+<% end %>
+
+<h1>This is the new home page</h1><br>
+
+
+<h2>Your User Id is <strong><%= session[:user_id] %></strong></h2>
+
+<%= link_to 'Log In', login_path, :class => "btn btn-primary" %>
+
+<%= link_to 'Log Out', logout_path, :class => "btn btn-danger " %>
